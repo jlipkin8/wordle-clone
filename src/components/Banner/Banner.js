@@ -7,7 +7,11 @@ function Banner({ won, numOfGuesses, answer }) {
         <div className="happy banner">
           <p>
             <strong>Congratulations!</strong> Got it in
-            <strong> {numOfGuesses} guesses</strong>.
+            <strong>
+              {" "}
+              {numOfGuesses} {numOfGuesses > 1 ? "guesses" : "guess"}
+            </strong>
+            .
           </p>
         </div>
       ) : (
