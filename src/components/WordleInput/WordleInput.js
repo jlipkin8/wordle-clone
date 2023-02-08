@@ -11,7 +11,6 @@ function WordleInput({ answer, guessList, setGuessList }) {
   const handleWord = (event) => {
     event.preventDefault();
     const newGuess = {
-      id: crypto.randomUUID(),
       word,
       checked_word: checkGuess(word, answer),
     };
