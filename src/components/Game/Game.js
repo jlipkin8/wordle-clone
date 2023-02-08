@@ -1,5 +1,6 @@
 import React from 'react';
-
+import WordleInput from '../WordleInput/WordleInput';
+import GuessResults from '../GuessResults/GuessResults';
 import { sample } from '../../utils';
 import { WORDS } from '../../data';
 
@@ -9,7 +10,14 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  return <>Put a game here!</>;
+  const [guessList, setGuessList] = React.useState([{id: "", word: "", checked_word: {}}])
+
+  return (
+  <>
+    <GuessResults guessList={guessList}/>
+    <WordleInput answer={answer} guessList={guessList} setGuessList={setGuessList}/>
+  </>
+  );
 }
 
 export default Game;
