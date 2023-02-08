@@ -10,7 +10,6 @@ function WordleInput({ answer, guessList, setGuessList }) {
 
   const handleWord = (event) => {
     event.preventDefault();
-    console.log("answer: ", answer);
     const newGuess = {
       id: crypto.randomUUID(),
       word,
