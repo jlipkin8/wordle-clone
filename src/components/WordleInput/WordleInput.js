@@ -1,12 +1,13 @@
 import React from "react";
 import { checkGuess } from "../../game-helpers";
 import Banner from "../Banner/Banner";
+import { NUM_OF_GUESSES_ALLOWED } from "../../constants";
 
 function WordleInput({ answer, guessList, setGuessList }) {
   const [word, setWord] = React.useState("");
   const numOfGuesses = guessList.length - 1;
   const [won, setWon] = React.useState(false);
-  const endGame = numOfGuesses > 6 || won;
+  const endGame = numOfGuesses > NUM_OF_GUESSES_ALLOWED || won;
 
   const handleWord = (event) => {
     event.preventDefault();
@@ -25,6 +26,7 @@ function WordleInput({ answer, guessList, setGuessList }) {
         <Banner answer={answer} numOfGuesses={numOfGuesses} won={won} />
       ) : (
         <input
+          required
           id="guess-input"
           type="text"
           minLength="5"
