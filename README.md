@@ -1,3 +1,7 @@
+
+# This is a tutorial from [Joy of React](https://www.joyofreact.com/), which I recommend if you want to learn React! 
+
+
 # Word Game
 
 ## Joy of React, Project I
