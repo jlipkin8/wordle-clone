@@ -1,8 +1,8 @@
-import React from 'react';
-import WordleInput from '../WordleInput/WordleInput';
-import GuessResults from '../GuessResults/GuessResults';
-import { sample } from '../../utils';
-import { WORDS } from '../../data';
+import React from "react";
+import WordleInput from "../WordleInput/WordleInput";
+import GuessResults from "../GuessResults/GuessResults";
+import { sample } from "../../utils";
+import { WORDS } from "../../data";
 
 // Pick a random word on every pageload.
 const answer = sample(WORDS);
@@ -10,13 +10,16 @@ const answer = sample(WORDS);
 console.info({ answer });
 
 function Game() {
-  const [guessList, setGuessList] = React.useState([{id: "", word: "", checked_word: {}}])
-
+  const [guessList, setGuessList] = React.useState([]);
   return (
-  <>
-    <GuessResults guessList={guessList}/>
-    <WordleInput answer={answer} guessList={guessList} setGuessList={setGuessList}/>
-  </>
+    <>
+      <GuessResults guessList={guessList} />
+      <WordleInput
+        answer={answer}
+        guessList={guessList}
+        setGuessList={setGuessList}
+      />
+    </>
   );
 }
 
